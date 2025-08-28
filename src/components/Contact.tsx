@@ -35,12 +35,12 @@ export const Contact: React.FC = () => {
     {
       icon: MapPin,
       title: 'Location',
-      details: '123 Pizza Street, Foodie District, NY 10001'
+      details: 'RV University, Bengaluru, Karnataka'
     },
     {
       icon: Phone,
       title: 'Phone',
-      details: '(555) 123-PIZZA'
+      details: '+91-XXXXX-XXXXX'
     },
     {
       icon: Clock,
@@ -50,7 +50,7 @@ export const Contact: React.FC = () => {
     {
       icon: Mail,
       title: 'Email',
-      details: 'hello@pizzacrave.com'
+      details: 'kashchit10@gmail.com'
     }
   ];
 

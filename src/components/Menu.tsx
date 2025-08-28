@@ -26,84 +26,84 @@ export const Menu: React.FC = () => {
       id: 'margherita',
       name: 'Margherita Classic',
       description: 'Fresh mozzarella, tomato sauce, basil, extra virgin olive oil',
-      price: 16.99,
+      price: 399,
       image: pepperoniImage,
       category: 'pizza',
       sizes: [
-        { name: 'Small (10")', price: 12.99 },
-        { name: 'Medium (12")', price: 16.99 },
-        { name: 'Large (16")', price: 22.99 },
-        { name: 'Extra Large (18")', price: 26.99 }
+        { name: 'Small (10")', price: 299 },
+        { name: 'Medium (12")', price: 399 },
+        { name: 'Large (16")', price: 549 },
+        { name: 'Extra Large (18")', price: 649 }
       ]
     },
     {
       id: 'pepperoni',
       name: 'Pepperoni Supreme',
       description: 'Classic pepperoni, mozzarella cheese, marinara sauce',
-      price: 18.99,
+      price: 449,
       image: pepperoniImage,
       category: 'pizza',
       sizes: [
-        { name: 'Small (10")', price: 14.99 },
-        { name: 'Medium (12")', price: 18.99 },
-        { name: 'Large (16")', price: 24.99 },
-        { name: 'Extra Large (18")', price: 28.99 }
+        { name: 'Small (10")', price: 349 },
+        { name: 'Medium (12")', price: 449 },
+        { name: 'Large (16")', price: 599 },
+        { name: 'Extra Large (18")', price: 699 }
       ]
     },
     {
       id: 'supreme',
       name: 'Supreme Deluxe',
       description: 'Pepperoni, sausage, mushrooms, bell peppers, olives, onions',
-      price: 22.99,
+      price: 549,
       image: supremeImage,
       category: 'pizza',
       sizes: [
-        { name: 'Small (10")', price: 18.99 },
-        { name: 'Medium (12")', price: 22.99 },
-        { name: 'Large (16")', price: 28.99 },
-        { name: 'Extra Large (18")', price: 32.99 }
+        { name: 'Small (10")', price: 449 },
+        { name: 'Medium (12")', price: 549 },
+        { name: 'Large (16")', price: 699 },
+        { name: 'Extra Large (18")', price: 799 }
       ]
     },
     {
       id: 'hawaiian',
       name: 'Hawaiian Paradise',
       description: 'Ham, pineapple, mozzarella cheese, tomato sauce',
-      price: 19.99,
+      price: 479,
       image: hawaiianImage,
       category: 'pizza',
       sizes: [
-        { name: 'Small (10")', price: 15.99 },
-        { name: 'Medium (12")', price: 19.99 },
-        { name: 'Large (16")', price: 25.99 },
-        { name: 'Extra Large (18")', price: 29.99 }
+        { name: 'Small (10")', price: 379 },
+        { name: 'Medium (12")', price: 479 },
+        { name: 'Large (16")', price: 619 },
+        { name: 'Extra Large (18")', price: 719 }
       ]
     },
     {
       id: 'meat-lovers',
       name: 'Meat Lovers',
       description: 'Pepperoni, sausage, bacon, ham, ground beef',
-      price: 24.99,
+      price: 599,
       image: supremeImage,
       category: 'pizza',
       sizes: [
-        { name: 'Small (10")', price: 20.99 },
-        { name: 'Medium (12")', price: 24.99 },
-        { name: 'Large (16")', price: 30.99 },
-        { name: 'Extra Large (18")', price: 34.99 }
+        { name: 'Small (10")', price: 499 },
+        { name: 'Medium (12")', price: 599 },
+        { name: 'Large (16")', price: 749 },
+        { name: 'Extra Large (18")', price: 849 }
       ]
     },
     {
       id: 'veggie-delight',
       name: 'Veggie Delight',
       description: 'Mushrooms, bell peppers, onions, tomatoes, olives',
-      price: 20.99,
+      price: 499,
       image: hawaiianImage,
       category: 'pizza',
       sizes: [
-        { name: 'Small (10")', price: 16.99 },
-        { name: 'Medium (12")', price: 20.99 },
-        { name: 'Large (16")', price: 26.99 },
-        { name: 'Extra Large (18")', price: 30.99 }
+        { name: 'Small (10")', price: 399 },
+        { name: 'Medium (12")', price: 499 },
+        { name: 'Large (16")', price: 649 },
+        { name: 'Extra Large (18")', price: 749 }
       ]
     }
   ];
@@ -113,7 +113,7 @@ export const Menu: React.FC = () => {
       id: 'garlic-bread',
       name: 'Garlic Bread',
       description: 'Freshly baked bread with garlic butter and herbs',
-      price: 6.99,
+      price: 149,
       image: garlicBreadImage,
       category: 'sides'
     },
@@ -121,7 +121,7 @@ export const Menu: React.FC = () => {
       id: 'chicken-wings',
       name: 'Buffalo Wings',
       description: '8 pieces of crispy wings with buffalo sauce',
-      price: 12.99,
+      price: 299,
       image: chickenWingsImage,
       category: 'sides'
     },
@@ -129,7 +129,7 @@ export const Menu: React.FC = () => {
       id: 'mozzarella-sticks',
       name: 'Mozzarella Sticks',
       description: '6 pieces of crispy mozzarella with marinara sauce',
-      price: 8.99,
+      price: 199,
       image: mozzarellaSticksImage,
       category: 'sides'
     }
@@ -140,7 +140,7 @@ export const Menu: React.FC = () => {
       id: 'coca-cola',
       name: 'Coca Cola',
       description: 'Refreshing classic cola drink',
-      price: 2.99,
+      price: 65,
       image: cocaColaImage,
       category: 'drinks'
     },
@@ -148,7 +148,7 @@ export const Menu: React.FC = () => {
       id: 'sprite',
       name: 'Sprite',
       description: 'Lemon-lime flavored soft drink',
-      price: 2.99,
+      price: 65,
       image: spriteImage,
       category: 'drinks'
     },
@@ -156,7 +156,7 @@ export const Menu: React.FC = () => {
       id: 'orange-juice',
       name: 'Fresh Orange Juice',
       description: 'Freshly squeezed orange juice',
-      price: 3.99,
+      price: 89,
       image: orangeJuiceImage,
       category: 'drinks'
     }

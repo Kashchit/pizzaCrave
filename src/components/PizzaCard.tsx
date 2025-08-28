@@ -62,7 +62,7 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({ pizza }) => {
               <SelectContent>
                 {pizza.sizes.map((size) => (
                   <SelectItem key={size.name} value={size.name}>
-                    {size.name} - ${size.price.toFixed(2)}
+                    {size.name} - ₹{size.price.toFixed(0)}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -73,7 +73,7 @@ export const PizzaCard: React.FC<PizzaCardProps> = ({ pizza }) => {
         {/* Price and Add Button */}
         <div className="flex items-center justify-between">
           <span className="text-2xl font-bold text-primary">
-            ${getDisplayPrice().toFixed(2)}
+            ₹{getDisplayPrice().toFixed(0)}
           </span>
           
           <Button 

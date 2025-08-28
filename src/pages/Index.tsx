@@ -51,10 +51,10 @@ const Index = () => {
             <div>
               <h4 className="font-bold mb-4">Contact Info</h4>
               <ul className="space-y-2 text-white/80">
-                <li>123 Pizza Street</li>
-                <li>Foodie District, NY 10001</li>
-                <li>(555) 123-PIZZA</li>
-                <li>hello@pizzacrave.com</li>
+                <li>RV University</li>
+                <li>Bengaluru, Karnataka</li>
+                <li>+91-XXXXX-XXXXX</li>
+                <li>kashchit10@gmail.com</li>
               </ul>
             </div>
           </div>

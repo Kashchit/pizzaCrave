@@ -3,6 +3,7 @@ import { Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useCart } from '@/contexts/CartContext';
+import { UPIPayment } from './UPIPayment';
 
 interface CartSheetProps {
   isOpen: boolean;
@@ -11,12 +12,15 @@ interface CartSheetProps {
 
 export const CartSheet: React.FC<CartSheetProps> = ({ isOpen, onClose }) => {
   const { items, updateQuantity, removeFromCart, getTotalPrice, getTotalItems } = useCart();
+  const [showUPIPayment, setShowUPIPayment] = React.useState(false);
 
   const handleCheckout = () => {
     if (items.length === 0) return;
-    
-    // Here you would integrate with a payment provider
-    alert('Checkout functionality would be integrated with Stripe or another payment provider!');
+    setShowUPIPayment(true);
+  };
+
+  const getOrderDetails = () => {
+    return items.map(item => `${item.pizza.name}${item.size ? ` (${item.size})` : ''} x${item.quantity}`).join(', ');
   };
 
   if (items.length === 0) {
@@ -65,7 +69,7 @@ export const CartSheet: React.FC<CartSheetProps> = ({ isOpen, onClose }) => {
                     <p className="text-xs text-muted-foreground">Size: {item.size}</p>
                   )}
                   <p className="text-sm font-bold text-primary">
-                    ${((item.sizePrice || item.pizza.price) * item.quantity).toFixed(2)}
+                    ₹{((item.sizePrice || item.pizza.price) * item.quantity).toFixed(0)}
                   </p>
                 </div>
 
@@ -110,7 +114,7 @@ export const CartSheet: React.FC<CartSheetProps> = ({ isOpen, onClose }) => {
         <div className="border-t pt-4 space-y-4">
           <div className="flex justify-between items-center text-lg font-bold">
             <span>Total:</span>
-            <span className="text-primary">${getTotalPrice().toFixed(2)}</span>
+            <span className="text-primary">₹{getTotalPrice().toFixed(0)}</span>
           </div>
           
           <Button 
@@ -118,9 +122,16 @@ export const CartSheet: React.FC<CartSheetProps> = ({ isOpen, onClose }) => {
             className="w-full pizza-button text-white"
             size="lg"
           >
-            Proceed to Checkout
+            Pay with UPI
           </Button>
         </div>
+
+        <UPIPayment
+          isOpen={showUPIPayment}
+          onClose={() => setShowUPIPayment(false)}
+          amount={getTotalPrice()}
+          orderDetails={getOrderDetails()}
+        />
       </SheetContent>
     </Sheet>
   );
