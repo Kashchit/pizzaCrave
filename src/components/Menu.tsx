@@ -8,6 +8,16 @@ import pepperoniImage from '@/assets/pepperoni-pizza.jpg';
 import supremeImage from '@/assets/supreme-pizza.jpg';
 import hawaiianImage from '@/assets/hawaiian-pizza.jpg';
 
+// Import sides images
+import garlicBreadImage from '@/assets/garlic-bread.jpg';
+import chickenWingsImage from '@/assets/chicken-wings.jpg';
+import mozzarellaSticksImage from '@/assets/mozzarella-sticks.jpg';
+
+// Import drinks images
+import cocaColaImage from '@/assets/coca-cola.jpg';
+import spriteImage from '@/assets/sprite.jpg';
+import orangeJuiceImage from '@/assets/orange-juice.jpg';
+
 export const Menu: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'pizza' | 'sides' | 'drinks'>('pizza');
 
@@ -104,7 +114,7 @@ export const Menu: React.FC = () => {
       name: 'Garlic Bread',
       description: 'Freshly baked bread with garlic butter and herbs',
       price: 6.99,
-      image: pepperoniImage,
+      image: garlicBreadImage,
       category: 'sides'
     },
     {
@@ -112,7 +122,7 @@ export const Menu: React.FC = () => {
       name: 'Buffalo Wings',
       description: '8 pieces of crispy wings with buffalo sauce',
       price: 12.99,
-      image: supremeImage,
+      image: chickenWingsImage,
       category: 'sides'
     },
     {
@@ -120,7 +130,7 @@ export const Menu: React.FC = () => {
       name: 'Mozzarella Sticks',
       description: '6 pieces of crispy mozzarella with marinara sauce',
       price: 8.99,
-      image: hawaiianImage,
+      image: mozzarellaSticksImage,
       category: 'sides'
     }
   ];
@@ -131,7 +141,7 @@ export const Menu: React.FC = () => {
       name: 'Coca Cola',
       description: 'Refreshing classic cola drink',
       price: 2.99,
-      image: pepperoniImage,
+      image: cocaColaImage,
       category: 'drinks'
     },
     {
@@ -139,7 +149,7 @@ export const Menu: React.FC = () => {
       name: 'Sprite',
       description: 'Lemon-lime flavored soft drink',
       price: 2.99,
-      image: supremeImage,
+      image: spriteImage,
       category: 'drinks'
     },
     {
@@ -147,7 +157,7 @@ export const Menu: React.FC = () => {
       name: 'Fresh Orange Juice',
       description: 'Freshly squeezed orange juice',
       price: 3.99,
-      image: hawaiianImage,
+      image: orangeJuiceImage,
       category: 'drinks'
     }
   ];
