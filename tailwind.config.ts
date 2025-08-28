@@ -127,6 +127,9 @@ export default {
 				'fade-in': 'fade-in 0.6s ease-out',
 				'slide-in-left': 'slide-in-left 0.4s ease-out',
 				'pulse-glow': 'pulse-glow 2s ease-in-out infinite'
+			},
+			gridTemplateColumns: {
+				'25': 'repeat(25, minmax(0, 1fr))',
 			}
 		}
 	},

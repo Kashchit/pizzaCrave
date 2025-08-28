@@ -1,9 +1,9 @@
 import React from 'react';
-import { Minus, Plus, Trash2, ShoppingBag } from 'lucide-react';
+import { Minus, Plus, Trash2, ShoppingBag, QrCode } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetDescription, SheetHeader, SheetTitle } from '@/components/ui/sheet';
 import { useCart } from '@/contexts/CartContext';
-import { UPIPayment } from './UPIPayment';
+import { QRCode } from './QRCode';
 
 interface CartSheetProps {
   isOpen: boolean;
@@ -12,11 +12,11 @@ interface CartSheetProps {
 
 export const CartSheet: React.FC<CartSheetProps> = ({ isOpen, onClose }) => {
   const { items, updateQuantity, removeFromCart, getTotalPrice, getTotalItems } = useCart();
-  const [showUPIPayment, setShowUPIPayment] = React.useState(false);
+  const [showQRCode, setShowQRCode] = React.useState(false);
 
-  const handleCheckout = () => {
+  const handleShowQRCode = () => {
     if (items.length === 0) return;
-    setShowUPIPayment(true);
+    setShowQRCode(true);
   };
 
   const getOrderDetails = () => {
@@ -118,20 +118,36 @@ export const CartSheet: React.FC<CartSheetProps> = ({ isOpen, onClose }) => {
           </div>
           
           <Button 
-            onClick={handleCheckout} 
+            onClick={handleShowQRCode} 
             className="w-full pizza-button text-white"
             size="lg"
           >
-            Pay with UPI
+            <QrCode className="mr-2 h-5 w-5" />
+            Show QR Code
           </Button>
         </div>
 
-        <UPIPayment
-          isOpen={showUPIPayment}
-          onClose={() => setShowUPIPayment(false)}
-          amount={getTotalPrice()}
-          orderDetails={getOrderDetails()}
-        />
+        {/* QR Code Section */}
+        {showQRCode && (
+          <div className="border-t pt-4 space-y-4">
+            <div className="text-center space-y-4">
+              <div className="flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground">
+                <QrCode className="h-4 w-4" />
+                Scan QR Code to Pay ₹{getTotalPrice().toFixed(0)}
+              </div>
+              
+              <div className="flex justify-center">
+                <QRCode upiId="kashchit10@paytm" amount={getTotalPrice()} />
+              </div>
+              
+              <div className="text-xs text-muted-foreground space-y-2">
+                <p>Open any UPI app and scan this QR code</p>
+                <p>UPI ID: <code className="bg-muted px-2 py-1 rounded">kashchit10@paytm</code></p>
+                <p>Amount: <code className="bg-muted px-2 py-1 rounded">₹{getTotalPrice().toFixed(0)}</code></p>
+              </div>
+            </div>
+          </div>
+        )}
       </SheetContent>
     </Sheet>
   );

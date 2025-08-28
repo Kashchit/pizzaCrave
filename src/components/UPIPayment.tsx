@@ -1,8 +1,9 @@
 import React from 'react';
-import { Copy, Smartphone, CreditCard } from 'lucide-react';
+import { Copy, Smartphone, CreditCard, QrCode } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { toast } from '@/hooks/use-toast';
+import { QRCode } from './QRCode';
 
 interface UPIPaymentProps {
   isOpen: boolean;
@@ -55,6 +56,22 @@ export const UPIPayment: React.FC<UPIPaymentProps> = ({ isOpen, onClose, amount,
           <div className="text-center">
             <div className="text-3xl font-bold text-primary mb-2">₹{amount}</div>
             <div className="text-sm text-muted-foreground">Total Amount</div>
+          </div>
+
+          {/* QR Code Section */}
+          <div className="text-center space-y-4">
+            <div className="flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground">
+              <QrCode className="h-4 w-4" />
+              Scan QR Code to Pay
+            </div>
+            
+            <div className="flex justify-center">
+              <QRCode upiId={upiId} amount={amount} />
+            </div>
+            
+            <p className="text-xs text-muted-foreground">
+              Open any UPI app and scan this QR code to pay ₹{amount}
+            </p>
           </div>
 
           {/* Payment Options */}

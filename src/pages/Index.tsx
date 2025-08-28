@@ -60,7 +60,7 @@ const Index = () => {
           </div>
           
           <div className="border-t border-white/20 mt-8 pt-8 text-center text-white/60">
-            <p>&copy; 2024 PizzaCrave. All rights reserved. Made with ❤️ and lots of cheese.</p>
+            <p>&copy; 2025 PizzaCrave. All rights reserved. Made with ❤️ and lots of cheese by Kashchit</p>
           </div>
         </div>
       </footer>
